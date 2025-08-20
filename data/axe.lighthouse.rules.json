@@ -1,0 +1,8 @@
+[
+  "area-alt", "aria-allowed-attr", "aria-hidden-body", "aria-required-attr",
+  "aria-required-children", "aria-required-parent", "aria-roles",
+  "aria-valid-attr", "aria-valid-attr-value", "button-name", "color-contrast",
+  "document-title", "duplicate-id", "frame-title", "html-has-lang",
+  "html-lang-valid", "image-alt", "input-image-alt", "label", "link-name",
+  "list", "listitem", "meta-viewport", "region", "skip-link"
+]
