@@ -37,12 +37,53 @@ npm install
 npx playwright install
 ```
 
+4. Configure your test sites:
+```bash
+cp data/sites.json.example data/sites.json
+```
+Then edit `sites.json` with your own sites that need accessibility testing.
+
+## Test Sites Configuration
+
+The framework uses `sites.json` to determine which websites to test for accessibility. A template is provided as `sites.json.example`:
+
+```json
+{
+  "wcagTags": ["wcag2a", "wcag2aa"],
+  "excludeRules": ["empty-heading", "label-content-name-mismatch"],
+  "urls": [
+    "https://www.example.com/",
+    "https://www.example.com/page1"
+  ]
+}
+```
+
+To configure your test sites:
+
+1. Copy the example configuration:
+
+```bash
+cp data/sites.json.example data/sites.json
+```
+
+2. Edit `data/sites.json` and replace the URLs with your own websites that need accessibility testing.
+
+The configuration file supports the following options:
+
+- `wcagTags`: WCAG standards to test against (e.g., "wcag2a" for WCAG 2.0 Level A)
+- `excludeRules`: Array of accessibility rules to ignore
+- `urls`: Array of URLs to test for accessibility compliance
+
 ## Project Structure
+
 ```
 playwright-a11y/
 ├─ playwright.config.ts    # Playwright configuration
 ├─ package.json           # Project dependencies and scripts
 ├─ tsconfig.json         # TypeScript configuration
+├─ data/
+│  ├─ sites.json.example  # Template for test site configuration
+│  └─ sites.json         # Your actual test site configuration
 ├─ tests/
 │  ├─ a11y.spec.ts           # Accessibility test specs
 │  └─ console-message.spec.ts # Browser console error tracking
