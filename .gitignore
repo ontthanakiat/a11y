@@ -35,4 +35,6 @@ coverage/
 playwright-report/
 test-results/
 
-
+# Data files
+data/sites.json
+data/sites.json.backup

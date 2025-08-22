@@ -56,7 +56,8 @@ playwright-a11y/
 │     ├─ axe.ts            # Axe-core integration
 │     └─ reporters.ts      # Custom reporting
 └─ data/
-   ├─ sites.json          # Test URLs and configurations
+   ├─ sites.json          # Test URLs and configurations (gitignored)
+   ├─ sites-example.json  # Example configuration template
    └─ axe.lighthouse.rules.json  # Accessibility rules
 ```
 
@@ -101,6 +102,8 @@ playwright-a11y/
   ]
 }
 ```
+
+**Note:** The `data/sites.json` file is gitignored to prevent committing actual test URLs. Use `data/sites-example.json` as a template to create your own `sites.json` file with your specific URLs and configurations.
 
 ## Running Tests
 
@@ -157,7 +160,7 @@ Key data files and their roles:
   - Baseline set of axe rule IDs to include (Lighthouse-like). These are filtered by `excludeRules`.
 
 Where to adjust behavior:
-- Add/remove tested URLs: edit `data/sites.json` → `urls`.
+- Add/remove tested URLs: edit `data/sites.json` → `urls` (copy from `data/sites-example.json` if needed).
 - Loosen/tighten checks: edit `data/sites.json` → `wcagTags` and `excludeRules`, or modify `data/axe.lighthouse.rules.json`.
 - Browser matrix and timeouts: edit `playwright.config.ts`.
 - Navigation or shared page utilities: edit `src/pages/BasePage.ts` or extend `src/pages/GenericPage.ts`.

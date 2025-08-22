@@ -1,0 +1,9 @@
+{
+  "wcagTags": ["wcag2a", "wcag2aa"],
+  "excludeRules": ["empty-heading", "label-content-name-mismatch"],
+  "urls": [
+  "https://www.example.com/",
+  "https://www.example.com/page1",
+  "https://www.example.com/page2"
+  ]
+}

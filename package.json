@@ -6,6 +6,7 @@
   "scripts": {
     "test": "playwright test",
     "test:a11y": "playwright test tests/a11y.spec.ts",
+    "test:console": "playwright test tests/console-message.spec.ts",
     "report": "playwright show-report"
   },
   "keywords": [],
@@ -16,5 +17,8 @@
     "@axe-core/playwright": "^4.10.2",
     "@playwright/test": "^1.54.2",
     "@types/node": "^24.3.0"
+  },
+  "dependencies": {
+    "dotenv": "^17.2.1"
   }
 }
