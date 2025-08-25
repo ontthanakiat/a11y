@@ -3,7 +3,13 @@ import { defineConfig, devices } from '@playwright/test';
 export default defineConfig({
   testDir: './tests',
   // Use a simple list reporter locally and an HTML report artifact
-  reporter: [['list'], ['html', { open: 'never' }]],
+  reporter: [
+    ['list'],
+    ['html'],
+    // ['json', { outputFile: 'test-results/results.json' }],
+    // ['junit', { outputFile: 'test-results/results.xml' }],
+    // ['allure-playwright', { outputFolder: 'allure-results' }]
+  ],
   use: {
     // Collect a trace when a test is retried to aid debugging
     trace: 'on-first-retry',
@@ -16,7 +22,7 @@ export default defineConfig({
   retries: 1,
   projects: [
     { name: 'Chromium', use: { ...devices['Desktop Chrome'] } },
-    { name: 'Firefox',  use: { ...devices['Desktop Firefox'] } },
-    { name: 'WebKit',   use: { ...devices['Desktop Safari'] } }
+    // { name: 'Firefox',  use: { ...devices['Desktop Firefox'] } },
+    // { name: 'WebKit',   use: { ...devices['Desktop Safari'] } }
   ]
 });

@@ -238,16 +238,49 @@ The framework checks for:
 
 ## Error Tracking
 
-The framework includes two specialized test suites for error tracking:
+The framework includes four specialized test suites, each serving a specific purpose:
 
-### 1. Accessibility Error Tracking (a11y.spec.ts)
-Tracks WCAG compliance and accessibility violations using Axe-core.
+### Test Suites Overview
 
-### 2. Browser Console Error Tracking (console-message.spec.ts)
-Monitors and reports browser-side issues:
+| Test File | Complexity | Use Case | Main Focus |
+|-----------|------------|----------|------------|
+| `a11y.spec.ts` | Basic | Quick a11y checks | Basic accessibility compliance using Axe-core |
+| `comprehensive-a11y.spec.ts` | Advanced | Full a11y testing | Detailed accessibility with custom rules and advanced configurations |
+| `console-message.spec.ts` | Intermediate | Debugging | Console error monitoring and browser-side issues |
+| `example.spec.ts` | Basic | Learning | Template/Example for new test creation |
 
-#### Types of Errors Tracked:
+### When to Use Each Test Suite
+
+1. **Basic Accessibility Testing (`a11y.spec.ts`)**
+   - Quick accessibility compliance checks
+   - Basic Axe-core implementation
+   - Ideal for rapid testing and CI/CD pipelines
+
+2. **Comprehensive Accessibility Testing (`comprehensive-a11y.spec.ts`)**
+   - Multiple page/component testing
+   - Custom accessibility rules
+   - Detailed reporting capabilities
+   - Advanced configuration options
+   - Use for production-grade accessibility validation
+
+3. **Console Error Tracking (`console-message.spec.ts`)**
+   - Monitors browser console messages
+   - Tracks uncaught exceptions
+   - Verifies API responses
+   - Ideal for debugging and development phases
+
+4. **Example Testing (`example.spec.ts`)**
+   - Reference implementation
+   - Training resource for new team members
+   - Template for creating new test files
+   - Best practices demonstration
+
+### Error Types and Features
+
+#### Console Message Types
+
 1. Console Errors
+
 ```typescript
 // Captures error-level console messages
 page.on('console', msg => {
@@ -263,6 +296,7 @@ page.on('console', msg => {
 ```
 
 2. Uncaught Exceptions
+
 ```typescript
 // Captures unhandled JavaScript errors
 page.on('pageerror', error => {
@@ -275,7 +309,8 @@ page.on('pageerror', error => {
 });
 ```
 
-#### Features:
+#### Supported Features
+
 - Detailed error reporting with timestamps
 - Stack trace preservation
 - Error location tracking
@@ -284,7 +319,8 @@ page.on('pageerror', error => {
 - Video recording of failed tests
 - Test retry support
 
-#### Running Console Error Tests:
+#### Running Tests
+
 ```bash
 # Run only console error tests
 npx playwright test console-message.spec.ts
@@ -324,35 +360,43 @@ npx playwright show-report
 
 Suggested lightweight workflow for this repo:
 
+### Git Workflow Steps
+
 1. Create a feature branch from `main`:
+
 ```bash
 git checkout -b feat/<short-description>
 ```
 
 2. Commit changes in logical chunks with clear messages:
+
 ```bash
 git add .
 git commit -m "feat: add axe scan docs and code flow"
 ```
 
 3. Rebase on latest `main` before opening a PR:
+
 ```bash
 git fetch origin
 git rebase origin/main
 ```
 
 4. Push and open a Pull Request:
+
 ```bash
 git push -u origin feat/<short-description>
 ```
 
-Branch naming conventions:
+### Branch Naming Conventions
+
 - `feat/<scope>`: new features
 - `fix/<scope>`: bug fixes
 - `docs/<scope>`: documentation only
 - `chore/<scope>`: tooling, deps, config
 
-Commit conventions (Conventional Commits):
+### Commit Conventions (Conventional Commits)
+
 - `feat: ...` adds functionality
 - `fix: ...` fixes a bug
 - `docs: ...` docs-only changes
@@ -360,12 +404,16 @@ Commit conventions (Conventional Commits):
 - `refactor: ...` code changes without features/bug fixes
 - `test: ...` test-only changes
 
-Release tips:
-- Squash-merge PRs to keep history clean.
+### Release Management
+
+- Squash-merge PRs to keep history clean
 - Tag releases after merging significant changes:
+
 ```bash
 git tag -a v0.1.0 -m "First release"
 git push --tags
 ```
+
+## Project License
 
 This project is licensed under the MIT License - see the LICENSE file for details.

@@ -1,24 +1,34 @@
+
 {
   "name": "playwright-a11y",
   "version": "1.0.0",
-  "description": "Accessibility testing with Playwright and Axe",
+  "description": "Accessibility testing suite using Playwright",
   "main": "index.js",
   "scripts": {
     "test": "playwright test",
-    "test:a11y": "playwright test tests/a11y.spec.ts",
-    "test:console": "playwright test tests/console-message.spec.ts",
-    "report": "playwright show-report"
+    "test:comprehensive": "playwright test comprehensive-a11y.spec.ts",
+    "test:a11y": "playwright test a11y.spec.ts",
+    "test:console": "playwright test console-message.spec.ts",
+    "test:example": "playwright test example.spec.ts",  
+    "report": "playwright show-report",
+    "report:allure": "allure generate allure-results -o allure-report --clean && allure open allure-report"
   },
-  "keywords": [],
+  "keywords": [
+    "accessibility",
+    "testing",
+    "playwright",
+    "a11y"
+  ],
   "author": "",
   "license": "ISC",
-  "type": "commonjs",
   "devDependencies": {
-    "@axe-core/playwright": "^4.10.2",
-    "@playwright/test": "^1.54.2",
-    "@types/node": "^24.3.0"
+    "@playwright/test": "latest",
+    "allure-playwright": "latest",
+    "playwright": "latest"
   },
   "dependencies": {
-    "dotenv": "^17.2.1"
+    "@axe-core/playwright": "^4.7.0",
+    "cors": "^2.8.5",
+    "express": "^5.1.0"
   }
 }
