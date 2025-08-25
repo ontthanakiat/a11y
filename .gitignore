@@ -34,7 +34,10 @@ coverage/
 # Playwright artifacts
 playwright-report/
 test-results/
+allure-results/
+allure-report/
 
 # Data files
 data/sites.json
 data/sites.json.backup
+*docs
