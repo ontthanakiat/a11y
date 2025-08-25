@@ -41,3 +41,5 @@ allure-report/
 data/sites.json
 data/sites.json.backup
 *docs
+.github/workflows/ci.yml
+.github/workflows/ci.yml.backup
