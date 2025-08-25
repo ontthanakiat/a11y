@@ -1,4 +1,3 @@
-
 {
   "name": "playwright-a11y",
   "version": "1.0.0",
@@ -9,7 +8,7 @@
     "test:comprehensive": "playwright test comprehensive-a11y.spec.ts",
     "test:a11y": "playwright test a11y.spec.ts",
     "test:console": "playwright test console-message.spec.ts",
-    "test:example": "playwright test example.spec.ts",  
+    "test:example": "playwright test example.spec.ts",
     "report": "playwright show-report",
     "report:allure": "allure generate allure-results -o allure-report --clean && allure open allure-report"
   },
@@ -23,8 +22,10 @@
   "license": "ISC",
   "devDependencies": {
     "@playwright/test": "latest",
+    "@types/node": "^24.3.0",
     "allure-playwright": "latest",
-    "playwright": "latest"
+    "playwright": "latest",
+    "typescript": "^5.9.2"
   },
   "dependencies": {
     "@axe-core/playwright": "^4.7.0",
