@@ -8,7 +8,7 @@ export default defineConfig({
     ['html'],
     // ['json', { outputFile: 'test-results/results.json' }],
     // ['junit', { outputFile: 'test-results/results.xml' }],
-    // ['allure-playwright', { outputFolder: 'allure-results' }]
+    //['allure-playwright', { outputFolder: 'allure-results' }]
   ],
   use: {
     // Collect a trace when a test is retried to aid debugging
