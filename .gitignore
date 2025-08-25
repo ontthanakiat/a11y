@@ -41,6 +41,3 @@ allure-report/
 data/sites.json
 data/sites.json.backup
 *docs
-
-# CI/CD - not ready yet
-.github/workflows/ci.yml
